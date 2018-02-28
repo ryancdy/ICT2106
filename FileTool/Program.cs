@@ -122,7 +122,17 @@ namespace ICT2106.FileTool
             }
 
             // performing copying
-            inputStream.CopyTo(outputStream);
+			try {
+				inputStream.CopyTo(outputStream);
+			}
+			catch (IOException e)
+			{
+				Console.WriteLine(e.Message);
+			}
+			catch (NotSupportedException e)
+			{
+				Console.WriteLine(e.Message);
+			}
 
             // clean up
             inputStream.Dispose();
