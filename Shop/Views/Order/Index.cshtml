@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Order";
+}
+
+<h2>Place an Order</h2>
+
+<form method="post" action="/Order/Submit">
+
+    <p>
+        <label name="trackingId">Tracking ID:</label>
+        <input type="text" name="trackingId" size="20" />
+    </p>
+
+    <p>
+        <label name="cost">Total Cost:</label>
+        <input type="text" name="cost" size="10" />
+    </p>
+
+    <p>
+        <label name="weight">Weight (kg):</label>
+        <input type="text" name="weight" size="10" />
+    </p>
+
+    <p>
+        <label name="address">Destination:</label>
+        <select name="address">
+            <option value="sg" checked>Singapore</option>
+            <option value="bn">Brunei</option>
+            <option value="id">Indonesia</option>
+            <option value="my">Malaysia</option>
+            <option value="th">Thailand</option>
+        </select>
+    </p>
+
+    <input type="submit" value="Submit order" />
+
+</form>

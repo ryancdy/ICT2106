@@ -1,0 +1,32 @@
+﻿@using ICT2106.Shop.Models.Products;
+@model IEnumerable<IProduct>
+@{
+    ViewData["Title"] = "Catalogue";
+}
+
+<h2>Catalogue</h2>
+
+<table style="width: 100%">
+
+    <!-- table header-->
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price (SGD)</th>
+        <th>Weight (kg)</th>
+    </tr>
+
+    <!-- list products one by one -->
+    @foreach (IProduct prod in Model)
+    {
+        <tr>
+            <td>@prod.GetId()</td>
+            <td>@prod.GetName()</td>
+            <td>@prod.GetPrice()</td>
+            <td>@prod.GetWeightInKG()</td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Home/Index">Back to the home page</a>

@@ -1,0 +1,14 @@
+﻿@model ICT2106.Shop.Models.View.OrderViewModel
+@{
+    ViewData["Title"] = "Order Submitted";
+}
+
+<h2>Order Submitted</h2>
+
+<p>
+    Your order will be delivered by @Model.GetCourierName(), Consignment: @Model.GetConsignmentLabel().
+</p>
+
+<p>
+    <a href="/Order/Index">Place another order</a>
+</p>
