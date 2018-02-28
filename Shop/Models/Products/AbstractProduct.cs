@@ -27,6 +27,18 @@ namespace ICT2106.Shop.Models.Products
         }
 
 
+        // default comparison - compare by identifier
+        public int CompareTo(IProduct other)
+        {
+            if (id < other.GetId())
+                return -1;
+            else if (other.GetId() < id)
+                return 1;
+            else
+                return 0;
+        }
+
+
         // get the unique identifier
         public int GetId()
         {

@@ -6,6 +6,7 @@
 // Author: Nicholas Sheppard
 //
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 using ICT2106.Shop.Models.Products;
 
@@ -46,9 +47,33 @@ namespace ICT2106.Shop.Controllers
         //
         // Home page for products.
         //
-        public IActionResult Index()
+        public IActionResult Index(string sortOrder = null)
         {
-            return View(products.SelectAll());
+            // put all of the products to be displayed in a list
+            List<IProduct> productsForDisplay = new List<IProduct>();
+            foreach (IProduct prod in products.SelectAll())
+                productsForDisplay.Add(prod);
+
+            // sort the products
+            switch (sortOrder)
+            {
+                case "name":
+                    // sort by name
+                    productsForDisplay.Sort(new ProductNameComparer());
+                    break;
+
+                case "price":
+                    // sort by price
+                    productsForDisplay.Sort(new ProductPriceComparer());
+                    break;
+
+                default:
+                    // default order
+                    productsForDisplay.Sort();
+                    break;
+            }
+
+            return View(productsForDisplay);
         }
     }
 }

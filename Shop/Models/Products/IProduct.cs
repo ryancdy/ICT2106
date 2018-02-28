@@ -5,10 +5,11 @@
 //
 // Author: Nicholas Sheppard
 //
+using System;
 
 namespace ICT2106.Shop.Models.Products
 {
-    public interface IProduct
+    public interface IProduct : IComparable<IProduct>
     {
         // get the unique product identifier
         int GetId();
