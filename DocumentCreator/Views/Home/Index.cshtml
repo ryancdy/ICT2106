@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h2>Create a Document</h2>
+
+<form method="get" action="/Home/Submit">
+
+    <h3><label name="output">Output Format</label></h3>
+
+    <p>
+        <input type="radio" name="format" value="html" checked />HTML
+        <br />
+        <input type="radio" name="format" value="latex" />LaTeX
+    </p>
+
+    <h3><label name="method">Construction Method</label></h3>
+
+    <p>
+        <input type="radio" name="pattern" value="factory" checked />Abstract Factory
+        <br/>
+        <input type="radio" name="pattern" value="builder" />Builder
+        <br/>
+        <input type="radio" name="pattern" value="clone" />Clone
+    </p>
+
+    <p>
+        <input type="submit" value="Next" />
+    </p>
+
+</form>

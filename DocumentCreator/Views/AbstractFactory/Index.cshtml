@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Abstract Factory";
+    var outputFormat = ViewData["Format"];
+}
+
+<h2>Create a Document</h2>
+
+<form method="get" action="/AbstractFactory/Submit">
+    
+    <!-- save the output format in a hidden field-->
+    <input type="hidden" name="format" value="@outputFormat" />
+
+    <!-- document heading -->
+    <p>
+        <label name="headingText">Heading:</label>
+        <br />
+        <input type="text" name="headingText" size="50" value="" />
+    </p>
+
+    <!-- document body -->
+    <p>
+        <label name="paragraphText">Body:</label>
+        <br />
+        <textarea name="paragraphText" rows="10" cols="50" ></textarea>
+    </p>
+
+    <input type="submit" value="Submit" />
+
+</form>
